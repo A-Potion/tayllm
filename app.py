@@ -143,7 +143,7 @@ class BigramLanguageModel(nn.Module):
         return idx
 
 
-model_url = "https://drive.google.com/file/d/1RfCFRVzQOedrqkInjLYnKgMQh6hUwHTH/view?usp=sharing"
+model_url = "https://drive.google.com/uc?id=1pTPPleG3Q804ZQWkKKo_hTArrxFMYl_7&confirm=t&uuid=a002a608-5eb3-44e6-98d8-1c9bde827fbc"
 model_path = "model.pth"
 
 #Downloading the PyTorch Model
