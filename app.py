@@ -152,7 +152,7 @@ if not os.path.exists(model_path):
 
 
 model = BigramLanguageModel()
-model.load_state_dict(torch.load("model.pth", map_location=device, weights_only=False))
+model.load_state_dict(torch.load("model.pth", map_location=device, weights_only=True))
 model.to(device)
 model.eval()
 
