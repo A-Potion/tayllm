@@ -19,6 +19,7 @@ eval_iters = 200
 n_embd = 384
 dropout = 0.2
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 
 with open('data/lyrics.txt', 'r', encoding='utf-8') as f:
     text = f.read()
@@ -151,7 +152,7 @@ if not os.path.exists(model_path):
 
 
 model = BigramLanguageModel()
-model.load_state_dict(torch.load(model_path, map_location=device, weights_only=False))
+model.load_state_dict(torch.load("model.pt", map_location=device, weights_only=True))
 model.to(device)
 model.eval()
 
