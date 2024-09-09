@@ -152,8 +152,8 @@ if not os.path.exists(model_path):
 
 
 model = BigramLanguageModel()
-model.load_state_dict(torch.load("model.pth", map_location=device, weights_only=True))
-model.to(device)
+model.load_state_dict(torch.load("model.pth", map_location=device, weights_only=False))
+# model.to(device)
 model.eval()
 
 model_quantized = quantize_dynamic(model, {torch.nn.Linear}, dtype=torch.qint8)
