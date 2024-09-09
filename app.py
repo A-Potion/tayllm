@@ -142,8 +142,8 @@ class BigramLanguageModel(nn.Module):
         return idx
 
 
-model_url = "https://drive.google.com/uc?id=1pTPPleG3Q804ZQWkKKo_hTArrxFMYl_7"
-model_path = "model.ph"
+model_url = "https://drive.google.com/file/d/1RfCFRVzQOedrqkInjLYnKgMQh6hUwHTH/view?usp=sharing"
+model_path = "model.pt"
 
 #Downloading the PyTorch Model
 if not os.path.exists(model_path):
@@ -151,7 +151,7 @@ if not os.path.exists(model_path):
 
 
 model = BigramLanguageModel()
-model.load_state_dict(torch.load(model_path, weights_only=True))
+model.load_state_dict(torch.load(model_path, weights_only=False))
 model.to(device)
 model.eval()
 
