@@ -185,14 +185,12 @@ st.title("TayLLM")
 
 # Input field
 prompt = encode(st.text_input("Enter your text prompt"))
-context = torch.tensor(prompt, dtype=torch.long, device=device)
 
 
 # Generate button
 if st.button("Generate"):
     if context:
-        token_ids = model.generate(context.unsqueeze(0), max_new_tokens=700)[0].tolist()
-        generated_text = decode(token_ids)
-        st.write(generated_text)
+        context = torch.tensor(prompt, dtype=torch.long, device=device)
+        st.write(decode(m.generate(context.unsqueeze(0), max_new_tokens=500)[0].tolist()))
     else:
         st.write("Please enter a prompt!")
