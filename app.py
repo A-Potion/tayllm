@@ -8,13 +8,13 @@ from torch.nn import functional as F
 import gdown
 
 torch.manual_seed(1337)
-batch_size = 84
+batch_size = 128
 block_size = 256
-max_iters = 35000
+max_iters = 25000
 eval_interval = 300
 learning_rate = 1e-4
-n_head = 10
-n_layer = 10
+n_head = 12
+n_layer = 12
 eval_iters = 200
 n_embd = 384
 dropout = 0.2
