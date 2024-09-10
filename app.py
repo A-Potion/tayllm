@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 import gdown
+from torch.quantization import quantize_dynamic
 
 torch.manual_seed(1337)
 batch_size = 128
@@ -177,7 +178,10 @@ model.load_state_dict(torch.load("model.pth", map_location=device, weights_only=
 # model.to(device)
 model.eval()
 
+
 model_quantized = quantize_dynamic(model, {torch.nn.Linear}, dtype=torch.qint8)
+
+model = model_quantized
 
 
 # Streamlit App
