@@ -190,6 +190,6 @@ prompt = encode(st.text_input("Enter your text prompt"))
 if st.button("Generate"):
     if prompt:
         context = torch.tensor(prompt, dtype=torch.long, device=device)
-        st.write(decode(m.generate(context.unsqueeze(0), max_new_tokens=500)[0].tolist()))
+        st.write(decode(model.generate(context.unsqueeze(0), max_new_tokens=500)[0].tolist()))
     else:
         st.write("Please enter a prompt!")
