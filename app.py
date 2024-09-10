@@ -191,7 +191,7 @@ context = torch.tensor(prompt, dtype=torch.long, device=device)
 # Generate button
 if st.button("Generate"):
     if context:
-        token_ids = decode(model.generate(context.unsqueeze(0), max_new_tokens=700)[0].tolist())
+        token_ids = model.generate(context.unsqueeze(0), max_new_tokens=700)[0].tolist()
         generated_text = decode(token_ids)
         st.write(generated_text)
     else:
