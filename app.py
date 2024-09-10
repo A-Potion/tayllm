@@ -184,7 +184,8 @@ model_quantized = quantize_dynamic(model, {torch.nn.Linear}, dtype=torch.qint8)
 st.title("TayLLM")
 
 # Input field
-context = encode(st.text_input("Enter your text prompt"))
+prompt = encode(st.text_input("Enter your text prompt"))
+torch.tensor(prompt, dtype=torch.long, device=device)
 
 
 # Generate button
