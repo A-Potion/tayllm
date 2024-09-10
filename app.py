@@ -185,7 +185,7 @@ st.title("TayLLM")
 
 # Input field
 prompt = encode(st.text_input("Enter your text prompt"))
-torch.tensor(prompt, dtype=torch.long, device=device)
+context = torch.tensor(prompt, dtype=torch.long, device=device)
 
 
 # Generate button
