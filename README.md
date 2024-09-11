@@ -1,4 +1,4 @@
 # tayllm
-An LLM trained on Taylor Swift songs.
+A Large Language Model trained exclusively on Taylor Swift lyrics. Made for an experimental event organied by [HackClub]<https://hackclub.com>
 
-Experience it at https://tayllm.streamlit.app
+Experience it [here]<https://tayllm.streamlit.app>
